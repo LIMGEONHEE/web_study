@@ -1,66 +1,198 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>자기소개</title>
-        
-        <style>
-            table#tbl-profil, table#tbl-profil th, table#tbl-profil td {
-                border: 1px solid black;
-                border-collapse: collapse;
-            }
-            
-            table#tbl-profil th {
-                background-color: navy;
-                color: white;
-                text-align: center;
-            }
-            
-             table#tbl-profil td {
-                color: navy;
-                text-align: left;
-             }
-        </style>
-        
-	</head>
-	<body>
-		<main>
-            <h1>임건희</h1>
-            
-            <blockquote>
-            <div id="index-box" style="border: 3px solid black; margin: 15px; padding: 15px; width: 200px;">
-                <div id="index"><h2>목차</h2></div>
-                <p><a href=#a1>1. 기본정보</a></p>
-                <p><a href=#a2>2. 두번째</a></p>
-           
-            </div>
-            </blockquote>
-            <table id="tbl-profil">
-                <tr>
-                    <th id="a1" colspan="2">기본정보</th>
-                </tr>
-                <tr>
-                    <th>이름</th>
-                    <td>임건희</td>
-                </tr>
-                <tr>
-                    <th>생년월일</th>
-                    <td>1996년 10월 1일</td>
-                </tr>
-                <tr>
-                    <th>국적</th>
-                    <td>대한민국</td>
-                </tr>
-                <tr>    
-                    <th>출생</th>
-                    <td>경기도 의정부시</td>
-                </tr>
-                <tr>
-                    <th>취미</th>
-                    <td>축구</td>
-                </tr>
-            </table>
-            
+<head>
+<meta charset="UTF-8">
+<title>자기소개</title>
+
+<style>
+body {
+    font: 100% Sans-serif;
+    margin: 20px;
+    line-height: 26px; /* 줄간격 */
+}
+
+.wrapper {
+    position: relative; /* 요소들을 배치하는 위치 */
+    overflow: auto;
+}
+
+#title {
+    background-color: #0054FF;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+#menu_bar {
+    width: 200px;
+    float: left;
+}
+
+#main {
+    padding: 10px;
+    /*
+    margin-left: 210px;
+    margin-right: 210px;
+    */
+    margin: 0px 210px;
+    /* top & bottom: 0px, right & left: 210px */
+    /* top -> right -> bottom -> left */
+}
+
+#menu_list {
+    margin: 1px;
+    padding: 1px;
+}
+
+.menu_item {
+    list-style-type: none;
+    background-color: #f1f1f1;
+    border: 1px solid #d4d4d4;
+    padding: 4px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+table#tbl-profil, table#tbl-profil th, table#tbl-profil td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table#tbl-profil th {
+    background-color: navy;
+    color: white;
+    text-align: center;
+}
+
+table#tbl-profil td {
+    color: navy;
+    text-align: left;
+}
+
+article {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    margin: 8px;
+}
+
+.mylink {
+    text-decoration: none;
+    color: #000000;
+}
+
+.mylink:hover {
+    color: #cc3300;
+}
+
+img:hover {
+    -ms-transform: rotate(10deg); /* IE 9 */
+    -moz-transform: rotate(10deg); /* Firefox */
+    -webkit-transform: rotate(10deg); /* Safari */
+    transform: rotate(10degree); /* Standard syntax */
+}
+
+img {
+    border: 5px solid #C4FDFF;
+}
+
+#sidebar {
+    background-color: darkgray;
+    padding: 0px;
+    width: 180px;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    text-align: center;
+}
+
+</style>
+
+</head>
+<body>
+    <header id="title">
+        <h1>건희's Blog</h1>
+    </header>
+
+    <div class="wrapper">
+        <nav id="menu_bar">
+            <ul id="menu_list">
+                <article>
+                    <h1 >목차</h1>
+                    <p>
+                        <a class="mylink" href=#a1 >1. 기본정보</a> 
+                        <br /> 
+                        <a class="mylink" href=#a2>2. 취미</a>
+                        <br /> 
+                        <a class="mylink" href=#a3>3. 좋아하는 음식</a>
+                        <br /> 
+                        <a class="mylink" href=#a4>4. MBTI</a>
+                        <br /> 
+                        <a class="mylink" href=#a5>5. 경력</a>
+                    </p>
+                    <article>
+            </ul>
+        </nav>
+        <main>
+            <section id="main">
+                <article>
+                    <h1 id="a1">1. 기본정보</h1>
+                    <p>
+                    <table id="tbl-profil">
+                        <tr>
+                            <th id="a1" colspan="2">기본정보</th>
+                        </tr>
+                        <tr>
+                            <th>이름</th>
+                            <td>임건희</td>
+                        </tr>
+                        <tr>
+                            <th>생년월일</th>
+                            <td>1996년 10월 1일</td>
+                        </tr>
+                        <tr>
+                            <th>국적</th>
+                            <td>대한민국</td>
+                        </tr>
+                        <tr>
+                            <th>출생</th>
+                            <td>경기도 의정부시</td>
+                        </tr>
+                    </table>
+                    </p>
+                </article>
+
+                <article>
+                    <h1 id="a2">2. 취미</h1>
+                    <p>축구를 하는 것과 보는 것을 좋아함</p>
+                    <img alt="soccer" src="images/soccer.jpg" >
+                </article>
+
+                <article>
+                    <h1 id="a3">3. 좋아하는 음식</h1>
+                    <p>맛있는 햄버거</p>
+                    <img alt="hamburger" src="images/hamburger.jpg" />
+                </article>
+                
+                <article>
+                    <h1 id="a4">4. MBTI</h1>
+                    <p>INFJ: 선의의 옹호자</p>
+                    <img alt="mbti" src="images/mbti.jpg" />1
+                </article>
+                
+                <article>
+                    <h1 id="a5">5. 경력</h1>
+                    <p>2022.01~현재: <a class="mylink" id="link-bepro" href="https://ko.bepro11.com/">비프로</a>(분석관)</p>
+                </article>
+                
+            </section>
         </main>
-	</body>
+        <aside id="sidebar">
+            <article>
+                    <a href="https://www.itwill.co.kr/"><img alt="itwill" src="images/itwill.png" /></a>
+                    
+                </article>
+        </aside>
+    </div>
+</body>
+
 </html>
