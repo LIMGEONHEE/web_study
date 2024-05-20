@@ -78,3 +78,30 @@
  
  numbers.forEach((x) => console.log(x)); // for 반복문을 간단하게 사용 가능.
  
+ console.log(numbers);
+ 
+ // 배열 numbers의 모든 원소들의 합계
+ let sum = 0;
+ for (let value of numbers) {
+    sum += value;
+ }
+ console.log(`sum = ${sum}`);
+ 
+ sum = numbers.reduce((acc, cur) => acc + cur, 0);
+ // reduce(callback, initialValue)
+ console.log(`sum = ${sum}`);
+  
+// numbers의 모든 원소들의 곱: 1 x 2 x ... x 5 x 6
+  result = 1;
+  for (let value of numbers) {
+    result = result * value; //-> result *= value;
+  }
+  console.log(`result = %{result}`);
+  
+  result = numbers.reduce((acc, cur) => acc * cur, 1);
+  
+  // numbers의 원소들 중에서 짝수들의 합: 2 + 4 + 6
+  
+  // numbers의 원소들의 제곱의 함: 1 + 4 + 9 + 16 + 25 + 36
+  
+  // numbers의 원소들 중에서 짝수들의 제곱의 합: 4 + 16 + 36

@@ -29,7 +29,7 @@
  
  result = add(1); // 선언된 파라미터보다 적은 개수의 아규먼트를 전달한 경우.
  console.log(`result = ${result}`); //-> 1+ undefined = Nan
- // indefined: 초기화되지 않은 변수(값이 할당되지 않은 변수).
+ // undefined: 초기화되지 않은 변수(값이 할당되지 않은 변수).
  // Nan(Not a Number)
  
  // JS 모든 함수는 arguments 속성(property)을 가지고 있음.
