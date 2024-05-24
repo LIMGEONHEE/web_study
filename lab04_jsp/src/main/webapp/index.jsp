@@ -4,13 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Lab 4</title>
 </head>
 <body>
     <header>
-    <h1>Contents</h1>
-    <h2><%= LocalDateTime.now() %></h2>
+        <h1>Contents</h1>
+        <h2><%= LocalDateTime.now() %></h2>
+        <h3>Hello, ${ nickname }!</h3>
     </header>
     
     <main>
@@ -20,15 +21,44 @@
             </li>
             <li>
                 <a href="ex2">두번째 서블릿</a>
-            </li>            
+            </li>
             <li>
                 <a href="ex3">포워드(forward)</a>
             </li>
             <li>
                 <a href="ex4">리다이렉트(redirect)</a>
             </li>
+            <li>
+                <a href="intro.jsp">JSP 소개</a>
+            </li>
+            <li>
+                <a href="main.jsp">include 지시문</a>
+            </li>
+            <li>
+                <a href="scriptlet.jsp">스크립트릿(scriptlet)</a>
+            </li>
+            <li>
+                <a href="form.jsp">폼 양식</a>
+            </li>
+            <li>
+                <a href="actiontag.jsp">JSP Action Tag</a>
+            </li>
+            <li>
+                <a href="el.jsp">EL(Expression Language, (표현)식 언어)</a>
+            </li>
+            <li>
+                <a href="jstl.jsp">JSTL</a>
+            </li>
+            <li>
+                <a href="mvc">MVC</a>
+            </li>
+            <li>
+                <a href="cookie">Cookie</a>
+            </li>
+            <li>
+                <a href="session">Session</a>
+            </li>
         </ul>
     </main>
-    
 </body>
 </html>
