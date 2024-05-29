@@ -21,7 +21,7 @@ public class PostListController extends HttpServlet {
 	private static final Logger log = LoggerFactory.getLogger(PostListController.class);
 	
 	// Service(Business) 계층의 기능(메서드)들을 사용하기 위해서.
-	private final PostService postService = PostService.INSTANCE;
+	private final PostService postService = PostService.INSTANCE; 
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
