@@ -40,5 +40,4 @@ public class PostModifyController extends HttpServlet{
 		req.getRequestDispatcher("/WEB-INF/views/post/modify.jsp")
 			.forward(req, resp);
 	}
-
 }
