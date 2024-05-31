@@ -14,7 +14,7 @@ import com.zaxxer.hikari.HikariDataSource;
 
 // Dao(Data Access Object). 데이터베이스 CRUD.
 public enum UserDao {
-	INSTANCE;
+	INSTANCE; // 객체 1개만 가능.
 
 	private static final Logger log = LoggerFactory.getLogger(UserDao.class);
 
@@ -26,8 +26,8 @@ public enum UserDao {
 	public int insert(User user) {
         log.debug("insert({})", user);
         
-        Connection conn = null;
-        PreparedStatement stmt = null;
+        Connection conn = null; // 연결
+        PreparedStatement stmt = null; // 실행
         int result = 0;
         try {
             conn = ds.getConnection();
@@ -35,7 +35,7 @@ public enum UserDao {
             stmt.setString(1, user.getUserid());
             stmt.setString(2, user.getPassword());
             stmt.setString(3, user.getEmail());
-            result = stmt.executeUpdate();
+            result = stmt.executeUpdate(); // 실행(업데이트)
             
         } catch (SQLException e) {
             e.printStackTrace();

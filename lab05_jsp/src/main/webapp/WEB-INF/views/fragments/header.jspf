@@ -27,11 +27,11 @@
                     <a class="nav-link" href="${newPostPage}">New Post</a>
                 </li>
                 <li class="nav-item">
-                    <c:url var="userSignInPage" value="/user/signin"/>
+                    <c:url var="SignInPage" value="/user/signin"/>
                     <a class="nav-link" href="#">로그인</a>
                 </li>
                 <li class="nav-item">
-                    <c:url var="userSignUpPage" value="/user/signup"/>
+                    <c:url var="SignUpPage" value="/user/signup"/>
                     <a class="nav-link" href="${SignUpPage}">회원가입</a>
                 </li>
             </ul>
