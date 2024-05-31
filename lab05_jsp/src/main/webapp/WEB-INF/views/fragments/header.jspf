@@ -32,7 +32,7 @@
                 </li>
                 <li class="nav-item">
                     <c:url var="userSignUpPage" value="/user/signup"/>
-                    <a class="nav-link" href="${userSignUpPage}">회원가입</a>
+                    <a class="nav-link" href="${SignUpPage}">회원가입</a>
                 </li>
             </ul>
         </div>

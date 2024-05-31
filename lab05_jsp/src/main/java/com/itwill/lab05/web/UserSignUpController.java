@@ -26,29 +26,30 @@ public class UserSignUpController extends HttpServlet {
 			throws ServletException, IOException {
 		log.debug("doGet()");
 
-		req.getRequestDispatcher("/WEB-INF/views/user/signup.jsp").forward(req, resp);
+		req.getRequestDispatcher("/WEB-INF/views/user/signup.jsp")
+        .forward(req, resp);
 	}
 
-	// TODO: 회원 가입에 필요한 요청 처리 메서드.
+	// 회원 가입에 필요한 요청 처리 메서드.
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
-		log.debug("doPost()");
-		
-		String userid = req.getParameter("userid");
-		String password = req.getParameter("password");
-		String email = req.getParameter("email");
-		User user = User.builder()
-					.userid(userid)
-					.passward(password)
-					.email(email)
-					.build();
-		log.debug("user={}", user);
-		
-		userService.create(user);
-		
-		String url = req.getContextPath();
-		log.debug("redirect: " + url);
-		resp.sendRedirect(url);
-	}
+            throws ServletException, IOException {
+        log.debug("doPost()");
+        
+        // 회원가입 폼에서 제출된 userid, password, email 요청 파라미터 값을 읽음.
+        String userid = req.getParameter("userid");
+        String password = req.getParameter("password");
+        String email = req.getParameter("email");
+        User user = User.builder()
+                .userid(userid).password(password).email(email)
+                .build();
+        log.debug("{}", user);
+        
+        // 서비스 계층의 메서드를 호출해서 회원가입.
+        userService.signUp(user);
+        
+        // 홈페이지로 이동(redirect)
+        String url = req.getContextPath() + "/";
+        resp.sendRedirect(url);
+    }
 }

@@ -14,13 +14,13 @@ public enum UserService {
 	
 	private UserDao userDao = UserDao.INSTANCE;
 	
-	// TODO: 회원 가입에 필요한 메서드. userDao.insert() 호출.
-	public int create(User user) {
-		log.debug("create(user={})", user);
-		
-		int result = userDao.insert(user);
-		log.debug("insert result = {}", result);
-		
-		return result;
+	// 회원 가입에 필요한 메서드. userDao.insert() 호출.
+	public int signUp(User user) {
+        log.debug("signUp({})", user);
+        
+        int result = userDao.insert(user);
+        log.debug("insert result = {}", result);
+        
+        return result;
 	}
 }
