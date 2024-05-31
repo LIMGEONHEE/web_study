@@ -64,8 +64,8 @@ public class User {
                 + points + "]";
     }
 
-    // builder 패턴(보일러플레이트)
-    public static UserBuilder builder() { // static으로 만든 이유: user를 만들기 전에 메소드를 불러오기 위해서(객체를 만들기 위해서)
+    // builder 패턴
+    public static UserBuilder builder() {
         return new UserBuilder();
     }
     
@@ -76,11 +76,12 @@ public class User {
         private String email;
         private Integer points;
         
-        private UserBuilder() {}
+        private UserBuilder() {} 
         
-        public UserBuilder id(Integer id) {
+        public UserBuilder id(Integer id) {// 메소드를 연쇄적으로 호출하기 위해서 return을 사용 ex) user.builder().build();  user.builder().id().(builder 안에 있는 것 사용가능)
+
             this.id = id;
-            return this; // 메소드를 연쇄적으로 호출하기 위해서 return을 사용 ex) user.builder().build();  user.builder().id().(builder 안에 있는 것 사용가능)
+            return this;
         }
         
         public UserBuilder userid(String userid) {
