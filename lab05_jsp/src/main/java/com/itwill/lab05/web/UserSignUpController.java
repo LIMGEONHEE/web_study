@@ -14,25 +14,24 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "UserSignUpController", urlPatterns = { "/user/signup" })
+@WebServlet(name = "userSignUpController", urlPatterns = { "/user/signup" })
 public class UserSignUpController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	private static final Logger log = LoggerFactory.getLogger(UserSignUpController.class);
+    private static final long serialVersionUID = 1L;
+    private static final Logger log = LoggerFactory.getLogger(UserSignUpController.class);
+    
+    private final UserService userService = UserService.INSTANCE;
+    
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
+            throws ServletException, IOException {
+        log.debug("doGet()");
+        
+        req.getRequestDispatcher("/WEB-INF/views/user/signup.jsp")
+            .forward(req, resp);
+    }
 
-	private final UserService userService = UserService.INSTANCE;
-
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
-		log.debug("doGet()");
-
-		req.getRequestDispatcher("/WEB-INF/views/user/signup.jsp")
-        .forward(req, resp);
-	}
-
-	// 회원 가입에 필요한 요청 처리 메서드.
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
             throws ServletException, IOException {
         log.debug("doPost()");
         
@@ -52,4 +51,5 @@ public class UserSignUpController extends HttpServlet {
         String url = req.getContextPath() + "/";
         resp.sendRedirect(url);
     }
+    
 }
