@@ -14,35 +14,39 @@
 </head>
 <body>
     <div class="container-fluid">
+        <c:set var="pageTitle" value="User Profile" scope="page" />
+        <%@ include file="../fragments/header.jspf" %>
+        
         <main>
             <div class="card mt-2">
                 <div class="card-header">
-                    <h2>로그인</h2>
+                    <h2>내 정보</h2>
                 </div>
                 <div class="card-body">
-                    <c:if test="${not empty param.result && param.result eq 'f'}">
-                        <div class="text-danger">아이디와 패스워드를 확인하세요.</div>
-                    </c:if>
-                    
-                    <c:url var="signInPage" value="/user/signin" />
-                    <form method="post" action="${signInPage}">
+                    <form>
                         <div class="mt-2">
-                            <input type="text" name="userid" placeholder="아이디" 
-                                class="form-control" required autofocus />
+                            <label class="form-label" for="userid">User ID</label>
+                            <input class="form-control" id="userid"
+                                type="text" name="userid" value="${user.userid}" readonly />
                         </div>
                         <div class="mt-2">
-                            <input type="password" name="password" placeholder="비밀번호" 
-                                class="form-control" required />
-                        </div>
-                        <div class="d-none">
-                            <input name="target" value="${param.target}" readonly />
+                            <label class="form-label" for="password">비밀번호</label>
+                            <input class="form-control" id="password"
+                                type="text" name="password" value="${user.password}" readonly />
                         </div>
                         <div class="mt-2">
-                            <input class="form-control btn btn-outline-success" 
-                                type="submit" value="로그인" />
+                            <label class="form-label" for="email">이메일</label>
+                            <input class="form-control" id="email"
+                                type="email" name="email" value="${user.email}" readonly />
+                        </div>
+                        <div class="mt-2">
+                            <label class="form-label" for="points">포인트</label>
+                            <input class="form-control" id="points"
+                                type="text" value="${user.points}" readonly />
                         </div>
                     </form>
                 </div>
+                <div class="card-footer"></div>
             </div>
         </main>
     </div>

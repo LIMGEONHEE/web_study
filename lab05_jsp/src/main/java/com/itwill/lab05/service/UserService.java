@@ -1,5 +1,7 @@
 package com.itwill.lab05.service;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,6 +33,16 @@ public enum UserService {
         User dto = User.builder().userid(userid).password(password).build();
         User user = userDao.selectByUseridAndPassword(dto);
         log.debug("로그인 결과 = {}", user);
+        
+        return user;
+    }
+    
+    // TODO read
+    public User read(String userid) {
+        log.debug("read(userid={})", userid);
+        
+        User user = userDao.selectByUserid(userid);
+        log.debug("select 결과 = {}", user);
         
         return user;
     }
