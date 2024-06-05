@@ -14,7 +14,7 @@
 	</head>
 	<body>
 		<header>
-            <h1>Example 페이지</h1>
+            <h1>테스트 페이지</h1>
         </header>
         
         <nav>
@@ -25,27 +25,6 @@
                 </li>
             </ul>
         </nav>
-        
-        <main>
-            <section>
-            <h2>GET 방식 요청</h2>
-            <c:url var="ex1" value="/ex1" />
-            <form method="get" action="${ex1}">
-                <input type="text" name="username" placeholder="이름 입력" />
-                <input type="number" name="age" placeholder="나이 입력" />
-                <input type="submit" value="제출" />
-            </form>
-        </section>
-        <section>
-            <h2>POST 방식 요청</h2>
-            <c:url var="ex2" value="/ex2" />
-            <form method="post" action="${ex2}">
-                <input type="text" name="username" placeholder="이름 입력" />
-                <input type="number" name="age" placeholder="나이 입력" />
-                <input type="submit" value="제출" />
-            </form>
-        </section>
-        </main>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
