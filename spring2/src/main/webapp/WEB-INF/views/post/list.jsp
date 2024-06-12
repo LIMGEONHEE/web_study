@@ -20,7 +20,14 @@
         <main>
             <div class="mt-2 card">
                 <div class="card-header">
-                    <h2>포스트 목록</h2>
+                    <c:url var="postSearchPage" value="/Post/search"/>
+                    <form method="get" action="${postSearchPage}">
+                        <div class="row">
+                            <div class="col-3"></div>
+                            <div class="col-6"></div>
+                            <div class="col-3"></div>
+                        </div>
+                    </form>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped table-hover">
