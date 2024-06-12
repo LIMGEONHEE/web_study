@@ -14,13 +14,13 @@
 </head>
 <body>
     <div class="container-fluid">
-        <c:set var="pageTitle" value="post List" />
+        <c:set var="pageTitle" value="Search Result" />
         <%@ include file="../fragments/header.jspf" %>
         
         <main>
             <div class="mt-2 card">
                 <div class="card-header">
-                    <c:url var="postSearchPage" value="/Post/search"/>
+                    <c:url var="postSearchPage" value="/post/search"/>
                     <form method="get" action="${postSearchPage}">
                         <div class="row">
                             <div class="col-3">
@@ -52,16 +52,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="p" items="${posts}">
+                            <c:forEach var="l" items="${list}">
                                 <tr>
-                                    <td>${p.id}</td>
+                                    <td>${l.id}</td>
                                     <td>
                                         <c:url var="PostDetailPage" value="/post/details" >
-                                            <c:param name="id" value="${p.id}"></c:param>
+                                            <c:param name="id" value="${l.id}"></c:param>
                                         </c:url>
-                                        <a href="${PostDetailPage}">${p.title}</a></td>
-                                    <td>${p.author}</td>
-                                    <td>${p.modifiedTime}</td>
+                                        <a href="${PostDetailPage}">${l.title}</a></td>
+                                    <td>${l.author}</td>
+                                    <td>${l.modifiedTime}</td>
                                 </tr>
                             </c:forEach>
                         </tbody>
