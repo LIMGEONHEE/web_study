@@ -23,9 +23,21 @@
                     <c:url var="postSearchPage" value="/Post/search"/>
                     <form method="get" action="${postSearchPage}">
                         <div class="row">
-                            <div class="col-3"></div>
-                            <div class="col-6"></div>
-                            <div class="col-3"></div>
+                            <div class="col-3">
+                                <select class="form-control" name="category">
+                                    <option value="t">제목</option>
+                                    <option value="c">내용</option>
+                                    <option value="tc">제목+내용</option>
+                                    <option value="a">작성자</option>
+                                </select>
+                            </div>
+                            <div class="col-7">
+                                <input type="text" class="form-control"
+                                    name="keyword" placeholder="검색어 입력" required/>
+                            </div>
+                            <div class="col-2">
+                                <input type="submit" class="form-control btn btn-outline-secondary" value="검색"/>
+                            </div>
                         </div>
                     </form>
                 </div>

@@ -13,7 +13,6 @@ public class PostUpdateDto {
 	private Integer id;
 	private String title;
 	private String content;
-	private String author;
 
 	
 	public Post toEntity() {
@@ -21,7 +20,6 @@ public class PostUpdateDto {
 					.id(id)
 					.title(title)
 					.content(content)
-					.author(author)
 					.build();
 	}
 	
