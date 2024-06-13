@@ -68,12 +68,6 @@ public class CommentDaoTest {
 		Assertions.assertEquals(7, result);
 	}
 	
-//	@Test
-	public void selectCommentCount() {
-		int result = commentDao.selectCommentCount(42);
-		// 테이블에 댓글이 5개 있는 경우
-		Assertions.assertEquals(7, result);
-	}
 	
 //	@Test
 	public void selectById() {
