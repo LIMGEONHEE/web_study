@@ -14,13 +14,13 @@
 </head>
 <body>
     <div class="container-fluid">
-        <c:set var="pageTitle" value="post List" />
+        <c:set var="pageTitle" value="Post List" />
         <%@ include file="../fragments/header.jspf" %>
         
         <main>
             <div class="mt-2 card">
                 <div class="card-header">
-                    <c:url var="postSearchPage" value="/Post/search"/>
+                    <c:url var="postSearchPage" value="/post/search"/>
                     <form method="get" action="${postSearchPage}">
                         <div class="row">
                             <div class="col-3">

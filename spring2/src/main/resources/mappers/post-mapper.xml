@@ -38,18 +38,18 @@
         select * from posts 
         <where>
             <choose>
-                <when test='categoty.equls("t")'>
+                <when test='category.equals("t")'>
                     upper(title) like upper(#{searchKeyword})
                 </when>
-                <when test='category.equls("c")'>
+                <when test='category.equals("c")'>
                     upper(content) like upper(#{searchKeyword})
                 </when>
-                <when test='category.equls("tc")'>
+                <when test='category.equals("tc")'>
                     upper(title) like upper(#{searchKeyword})
                     or
                     upper(content) like upper(#{searchKeyword})
                 </when>
-                <when test='category.equls("a")'>
+                <when test='category.equals("a")'>
                     upper(author) like upper(#{searchKeyword})
                 </when>
             </choose>
