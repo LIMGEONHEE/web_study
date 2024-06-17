@@ -80,14 +80,16 @@ public class CommentRestController {
     public ResponseEntity<Integer> updateComment(@PathVariable int id, @RequestBody CommentUpdateDto dto){
     	log.debug("updateComment(dto={})", dto);
     	
+    	dto.setId(id);
     	int result = commentService.update(dto);
     	
     	return ResponseEntity.ok(result);
     }	
     
-    @DeleteMapping("/{id}")
+    	@DeleteMapping("/{id}")
     public ResponseEntity<Integer> deleteComment(@PathVariable int id){
     	log.debug("deleteComment(id={}", id);
+    	
     	
     	int result = commentService.deleteById(id);
     	
