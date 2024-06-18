@@ -85,7 +85,7 @@
                                 <textarea class="form-control" rows="3"
                                     id="ctext" placeholder="댓글 내용"></textarea>
                                 <!-- 댓글 작성자 아이디: 
-                                TODO: 로그인한 사용자의 아이디로 설정 -->
+                                    TODO: 로그인한 사용자의 아이디로 설정 -->
                                 <input id="username" placeholder="댓글 작성자" />
                             </div>
                             <div class="col-2">

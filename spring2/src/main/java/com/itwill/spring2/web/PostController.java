@@ -15,6 +15,7 @@ import com.itwill.spring2.dto.PostSearchDto;
 import com.itwill.spring2.dto.PostUpdateDto;
 import com.itwill.spring2.repository.Post;
 import com.itwill.spring2.repository.PostDao;
+import com.itwill.spring2.service.CommentService;
 import com.itwill.spring2.service.PostService;
 
 import lombok.RequiredArgsConstructor;
@@ -28,6 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 public class PostController {
     
     private final PostService postService; // 생성자에 의한 의존성 주입
+    private final CommentService commentService; 
 
     @GetMapping("/list")
     public void list(Model model) {
@@ -92,6 +94,9 @@ public class PostController {
     public String delete(@RequestParam(name = "id") int id) {
         log.debug("delete(id={})", id);
         
+        // 포스트를 지우기 전에 포스트에 있는 댓글들을 먼저 삭제.
+        commentService.deleteByPostId(id);
+        
         // 서비스 컴포넌트의 메서드를 호출해서 데이터베이스의 테이블에서 해당 아이디의 글을 삭제.
         postService.delete(id);
         
@@ -117,6 +122,7 @@ public class PostController {
     	 model.addAttribute("posts", list);
     	 
     	 return "post/list";
-    	 
      }
+     
+     
 }
