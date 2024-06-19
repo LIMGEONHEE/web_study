@@ -122,15 +122,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="fw-bold">${comment.username}</span>
                     <span class="text-secondary">${modifiedTime}</span>
                 </div>
-                <div>${comment.ctext}</div>
+                <div>${comment.ctext}</div>`;
+
+            // 댓글 작성자와 로그인 사용자 아이디가 같은 경우에만 삭제/수정 버튼을 추가.
+            if (comment.username === signedInUser) {
+                htmlStr += `
                 <div>
                     <button class="btnDeleteComment btn btn-outline-danger btn-sm"
                         data-id="${comment.id}">삭제</button>
-                    <button class="btnModifyComment btn btn-outline-success btn-sm"
+                    <button class="btnModifyComment btn btn-outline-primary btn-sm"
                         data-id="${comment.id}">수정</button>
-                </div>
-            </div>
-            `;
+                </div>`;
+            }
+
+            htmlStr += '</div>'; // <div class="card card-body my-1">의 종료 태그!!
         }
 
         // 작성된 HTML 코드를 div 영역에 삽입.
@@ -150,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
     }
 
+    // 댓글 삭제 버튼의 클릭 이벤트 리스너
     function deleteComment(event) {
         // 이벤트 리스너 콜백의 아규먼트 event 객체는 target 속성을 가지고 있음.
         console.log(event.target); // 이벤트가 발생한 요소(타켓)

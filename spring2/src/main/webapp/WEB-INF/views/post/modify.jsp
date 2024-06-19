@@ -46,12 +46,15 @@
                         </div>
                     </form>
                 </div>
-                
-                <div class="card-footer">
-                    <button id="btnDelete" class="btn btn-outline-danger">삭제</button>
-                    <button id="btnUpdate" class="btn btn-outline-success">업데이트</button>
-                </div>
-                
+                <!-- 로그인 사용자 아이디와 글 작성자가 같은 경우에만 버튼을 보여줌. -->
+                <c:if test="${signedInUser eq post.author}">
+                    <div class="card-footer">
+                        <button id="btnDelete"
+                            class="btn btn-outline-danger">삭제</button>
+                        <button id="btnUpdate"
+                            class="btn btn-outline-success">업데이트</button>
+                    </div>
+                </c:if>
             </div>
         </main>
     </div>

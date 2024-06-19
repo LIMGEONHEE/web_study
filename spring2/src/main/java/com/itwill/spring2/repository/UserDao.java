@@ -4,4 +4,5 @@ public interface UserDao {
     
     User selectByUserid(String userid);
     int insert(User user);
+    User selectByUseridAndPassword(User user);
 }
