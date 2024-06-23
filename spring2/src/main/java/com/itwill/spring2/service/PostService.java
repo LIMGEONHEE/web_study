@@ -1,6 +1,5 @@
 package com.itwill.spring2.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -26,17 +25,11 @@ public class PostService {
     
     // 생성자에 의한 의존성 주입:
     // (1) final 필드 선언. (2) final 필드를 초기화하는 생성자 작성.
-    private final PostDao postDao; 
+    private final PostDao postDao;
 //    public PostService(PostDao postDao) {
 //        this.postDao = postDao;
 //    }
 
-//    public List<Post> read() {
-//        log.debug("read()");
-//        
-//        return postDao.selectOrderByIdDesc();
-//    }
-    
     private final CommentDao commentDao; // 생성자에 의한 의존성 주입
     
     public List<PostListDto> read() {
@@ -46,30 +39,30 @@ public class PostService {
         
 //        List<PostListDto> result = new ArrayList<>();
 //        for (Post p : list) {
-//        	result.add(PostListDto.fromEntity(p));
+//            result.add(PostListDto.fromEntity(p));
 //        }
         
         return list.stream()
-        		.map(PostListDto::fromEntity) // map((x) -> PostListDto.fromEntity(x))
-        		.toList();
+                .map(PostListDto::fromEntity) // map((x) -> PostListDto.fromEntity(x))
+                .toList();
     }
     
     public Post read(Integer id) {
-    	log.debug("read(id={})",id);
-    	
-    	return postDao.selectById(id);
+        log.debug("read(id={})", id);
+        
+        return postDao.selectById(id);
     }
-
-	public int create (PostCreateDto dto) {
-		log.debug("create({})", dto);
-		
-		int result = postDao.insertPost(dto.toEntity());
-		log.debug("insert 결과 ={}", result);
-		
-		return result;
-	}
     
-	public int delete(int id) {
+    public int create(PostCreateDto dto) {
+        log.debug("create({})", dto);
+        
+        int result = postDao.insertPost(dto.toEntity());
+        log.debug("insert 결과 = {}", result);
+        
+        return result;
+    }
+    
+    public int delete(int id) {
         log.debug("delete(id={})", id);
         
         // 리포지토리 컴포넌트의 메서드를 호출해서 delete 쿼리를 실행.
@@ -83,25 +76,25 @@ public class PostService {
         
         return result;
     }
-	 
-	 public int update(PostUpdateDto dto) {
-		 log.debug("update({})", dto);
-		 
-		 // 리포지토리 컴포넌트 메서드를 호출해서 update 쿼리를 실행.
-		 int result = postDao.updatePost(dto.toEntity());
-		 log.debug("update 결과 ={}", result);
-		 
-		 return result;
-	 }
-	 
-	 public List<PostListDto> search (PostSearchDto dto) {
-		 log.debug("search({})", dto);
-		 
-		 List<Post> list = postDao.search(dto);
-		 
-		 return list.stream()
-	        		.map(PostListDto::fromEntity) 
-	        		.toList();
-	 }
+    
+    public int update(PostUpdateDto dto) {
+        log.debug("update({})", dto);
+        
+        // 리포지토리 컴포넌트 메서드를 호출해서 update 쿼리를 실행.
+        int result = postDao.updatePost(dto.toEntity());
+        log.debug("update 결과 = {}", result);
+        
+        return result;
+    }
+    
+    public List<PostListDto> search(PostSearchDto dto) {
+        log.debug("search({})", dto);
+        
+        List<Post> list = postDao.search(dto);
+        
+        return list.stream()
+                .map(PostListDto::fromEntity)
+                .toList();
+    }
     
 }

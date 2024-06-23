@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="com.itwill.spring2.repository.UserDao">
-  
+<mapper namespace="com.itwill.spring2.repository.UserDao">
+
     <!-- 아이디 중복 체크 -->
     <select id="selectByUserid" resultType="User">
         select * from users where userid = #{userid}
@@ -20,5 +20,5 @@
         select * from users
         where userid = #{userid} and password = #{password}
     </select>
-    
-  </mapper>
+
+</mapper>
