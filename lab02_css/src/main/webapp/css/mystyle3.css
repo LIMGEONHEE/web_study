@@ -29,7 +29,7 @@ body {
 	margin-left: 210px;
     margin-right: 210px;
     */
-    margin: 0px 210px; /* top & bottom: 0px, right & left: 210px */
+    margin: 0px 100px; /* top & bottom: 0px, right & left: 210px */
     /* top -> right -> bottom -> left */
 }
 
